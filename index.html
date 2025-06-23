@@ -12,12 +12,17 @@
         <a-scene
             vr-mode-ui="enabled: false;"
             loading-screen="enabled: false;"
-            renderer="logarithmicDepthBuffer: true;"
+            renderer="logarithmicDepthBuffer: true; precision: mediump;"
             arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
             id="scene"
             embedded
             gesture-detector
         >
+            <!-- 🔆 Ambient and Directional Light -->
+            <a-light type="ambient" color="#ffffff" intensity="1.2"></a-light>
+            <a-light type="directional" color="#ffffff" intensity="1.5" position="1 2 1"></a-light>
+
+            <!-- Assets -->
             <a-assets>
                 <a-asset-item
                     id="animated-asset"
@@ -25,6 +30,7 @@
                 ></a-asset-item>
             </a-assets>
 
+            <!-- Marker & Model -->
             <a-marker
                 id="animated-marker"
                 type="pattern"
